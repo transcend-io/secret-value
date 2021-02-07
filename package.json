@@ -2,7 +2,7 @@
   "author": "Transcend Inc.",
   "name": "@transcend-io/secret-value",
   "description": "Type-safe wrapper for secret values",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "homepage": "https://github.com/transcend-io/secret-value",
   "repository": {
     "type": "git",
