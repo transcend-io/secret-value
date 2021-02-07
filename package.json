@@ -4,7 +4,10 @@
   "description": "Type-safe wrapper for secret values",
   "version": "1.0.4",
   "homepage": "https://github.com/transcend-io/secret-value",
-  "repository": "github:transcend-io/secret-value",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/transcend-io/secret-value.git"
+  },
   "license": "MIT",
   "main": "build/src/index",
   "files": [

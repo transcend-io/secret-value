@@ -30,7 +30,7 @@ jobs:
       - name: npm install, and test
         run: yarn test
 
-  build-and-push-image:
+  build-and-push-package:
     runs-on: ubuntu-latest
     needs:
       - run-tests
