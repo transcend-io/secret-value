@@ -52,6 +52,7 @@ jobs:
       run: |
         yarn config set npmAlwaysAuth true
         yarn config set npmRegistryServer https://npm.pkg.github.com
+        yarn config set npmPublishRegistry https://npm.pkg.github.com
         yarn config set npmAuthToken ${{ secrets.GITHUB_TOKEN }}
     - run: yarn npm whoami --scope transcend-io --publish
     - run: yarn npm publish

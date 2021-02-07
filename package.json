@@ -1,6 +1,6 @@
 {
   "author": "Transcend Inc.",
-  "name": "secret-value",
+  "name": "@transcend-io/secret-value",
   "description": "Type-safe wrapper for secret values",
   "version": "1.0.4",
   "homepage": "https://github.com/transcend-io/secret-value",
