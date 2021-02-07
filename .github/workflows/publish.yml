@@ -41,18 +41,15 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: '14.x'
-    # - run: yarn npm publish
-    #   env:
-    #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-    # - uses: actions/setup-node@v2
-    #   with:
-    #     node-version: '14.x'
-    #     registry-url: 'https://npm.pkg.github.com'
+    - name: Publish to yarn/npm
+      run: yarn npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     - name: Configure Github Packages authentication
       run: |
         yarn config set npmAlwaysAuth true
         yarn config set npmRegistryServer https://npm.pkg.github.com
         yarn config set npmPublishRegistry https://npm.pkg.github.com
         yarn config set npmAuthToken ${{ secrets.GITHUB_TOKEN }}
-    - run: yarn npm whoami --scope transcend-io --publish
-    - run: yarn npm publish
+    - name: Publish to Github packages
+      run: yarn npm publish
