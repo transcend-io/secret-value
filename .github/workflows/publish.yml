@@ -30,7 +30,7 @@ jobs:
       - name: npm install, and test
         run: yarn test
 
-  build-and-push-package:
+  build-to-npm:
     runs-on: ubuntu-latest
     needs:
       - run-tests
@@ -47,10 +47,21 @@ jobs:
         yarn config set npmAuthToken ${{ secrets.NPM_TOKEN }}
     - name: Publish to yarn/npm
       run: yarn npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  build-to-github-packages:
+    runs-on: ubuntu-latest
+    needs:
+      - run-tests
+      - run-build
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
     - name: Configure Github Packages authentication
       run: |
+        yarn config set npmAlwaysAuth true
         yarn config set npmRegistryServer https://npm.pkg.github.com
         yarn config set npmPublishRegistry https://npm.pkg.github.com
         yarn config set npmAuthToken ${{ secrets.GITHUB_TOKEN }}
