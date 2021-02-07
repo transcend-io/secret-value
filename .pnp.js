@@ -19,14 +19,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     ],
     "dependencyTreeRoots": [
       {
-        "name": "secret-value",
+        "name": "@transcend-io/secret-value",
         "reference": "workspace:."
       }
     ],
     "enableTopLevelFallback": true,
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)|$))$)",
     "fallbackExclusionList": [
-      ["secret-value", ["workspace:."]]
+      ["@transcend-io/secret-value", ["workspace:."]]
     ],
     "fallbackPool": [
     ],
@@ -39,10 +39,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@types/chai", "npm:4.2.14"],
             ["@types/mocha", "npm:8.2.0"],
-            ["@yarnpkg/pnpify", "virtual:7bcc06f43f763da2512aec6debf0d9b76c4537ceb618a784371cb268a0df4e70103bf583d8cdd57340c511dc2a01add633716b09e5c1e9e4ba256d11d5c49240#npm:2.4.0"],
+            ["@yarnpkg/pnpify", "virtual:bfd1e0b30ff890d6ef57af1978671ec58e6a6128a0988ed7ed91d82e816af39142528ea9e88e512c1af448b4eca6274b09c511199cdc4053d87cdf5f374a5d02#npm:2.4.0"],
             ["chai", "npm:4.3.0"],
             ["mocha", "npm:8.2.1"],
-            ["ts-node", "virtual:7bcc06f43f763da2512aec6debf0d9b76c4537ceb618a784371cb268a0df4e70103bf583d8cdd57340c511dc2a01add633716b09e5c1e9e4ba256d11d5c49240#npm:9.1.1"],
+            ["ts-node", "virtual:bfd1e0b30ff890d6ef57af1978671ec58e6a6128a0988ed7ed91d82e816af39142528ea9e88e512c1af448b4eca6274b09c511199cdc4053d87cdf5f374a5d02#npm:9.1.1"],
             ["tsconfig-paths", "npm:3.9.0"],
             ["typescript", "patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730"]
           ],
@@ -107,6 +107,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["defer-to-connect", "npm:2.0.0"]
           ],
           "linkType": "HARD",
+        }]
+      ]],
+      ["@transcend-io/secret-value", [
+        ["workspace:.", {
+          "packageLocation": "./",
+          "packageDependencies": [
+            ["@transcend-io/secret-value", "workspace:."],
+            ["@types/chai", "npm:4.2.14"],
+            ["@types/mocha", "npm:8.2.0"],
+            ["@yarnpkg/pnpify", "virtual:bfd1e0b30ff890d6ef57af1978671ec58e6a6128a0988ed7ed91d82e816af39142528ea9e88e512c1af448b4eca6274b09c511199cdc4053d87cdf5f374a5d02#npm:2.4.0"],
+            ["chai", "npm:4.3.0"],
+            ["mocha", "npm:8.2.1"],
+            ["ts-node", "virtual:bfd1e0b30ff890d6ef57af1978671ec58e6a6128a0988ed7ed91d82e816af39142528ea9e88e512c1af448b4eca6274b09c511199cdc4053d87cdf5f374a5d02#npm:9.1.1"],
+            ["tsconfig-paths", "npm:3.9.0"],
+            ["typescript", "patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730"]
+          ],
+          "linkType": "SOFT",
         }]
       ]],
       ["@types/cacheable-request", [
@@ -334,10 +351,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:7bcc06f43f763da2512aec6debf0d9b76c4537ceb618a784371cb268a0df4e70103bf583d8cdd57340c511dc2a01add633716b09e5c1e9e4ba256d11d5c49240#npm:2.4.0", {
-          "packageLocation": "./.yarn/$$virtual/@yarnpkg-pnpify-virtual-8a1b2f3c49/0/cache/@yarnpkg-pnpify-npm-2.4.0-f9312c18ed-89bbbe7f62.zip/node_modules/@yarnpkg/pnpify/",
+        ["virtual:bfd1e0b30ff890d6ef57af1978671ec58e6a6128a0988ed7ed91d82e816af39142528ea9e88e512c1af448b4eca6274b09c511199cdc4053d87cdf5f374a5d02#npm:2.4.0", {
+          "packageLocation": "./.yarn/$$virtual/@yarnpkg-pnpify-virtual-60d56d9864/0/cache/@yarnpkg-pnpify-npm-2.4.0-f9312c18ed-89bbbe7f62.zip/node_modules/@yarnpkg/pnpify/",
           "packageDependencies": [
-            ["@yarnpkg/pnpify", "virtual:7bcc06f43f763da2512aec6debf0d9b76c4537ceb618a784371cb268a0df4e70103bf583d8cdd57340c511dc2a01add633716b09e5c1e9e4ba256d11d5c49240#npm:2.4.0"],
+            ["@yarnpkg/pnpify", "virtual:bfd1e0b30ff890d6ef57af1978671ec58e6a6128a0988ed7ed91d82e816af39142528ea9e88e512c1af448b4eca6274b09c511199cdc4053d87cdf5f374a5d02#npm:2.4.0"],
             ["@types/eslint", null],
             ["@types/typescript", null],
             ["@yarnpkg/core", "npm:2.4.0"],
@@ -2636,23 +2653,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["secret-value", [
-        ["workspace:.", {
-          "packageLocation": "./",
-          "packageDependencies": [
-            ["secret-value", "workspace:."],
-            ["@types/chai", "npm:4.2.14"],
-            ["@types/mocha", "npm:8.2.0"],
-            ["@yarnpkg/pnpify", "virtual:7bcc06f43f763da2512aec6debf0d9b76c4537ceb618a784371cb268a0df4e70103bf583d8cdd57340c511dc2a01add633716b09e5c1e9e4ba256d11d5c49240#npm:2.4.0"],
-            ["chai", "npm:4.3.0"],
-            ["mocha", "npm:8.2.1"],
-            ["ts-node", "virtual:7bcc06f43f763da2512aec6debf0d9b76c4537ceb618a784371cb268a0df4e70103bf583d8cdd57340c511dc2a01add633716b09e5c1e9e4ba256d11d5c49240#npm:9.1.1"],
-            ["tsconfig-paths", "npm:3.9.0"],
-            ["typescript", "patch:typescript@npm%3A4.1.3#builtin<compat/typescript>::version=4.1.3&hash=cc6730"]
-          ],
-          "linkType": "SOFT",
-        }]
-      ]],
       ["semver", [
         ["npm:7.3.4", {
           "packageLocation": "./.yarn/cache/semver-npm-7.3.4-4c3baf0ead-f2c7f9aeb9.zip/node_modules/semver/",
@@ -2967,10 +2967,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:7bcc06f43f763da2512aec6debf0d9b76c4537ceb618a784371cb268a0df4e70103bf583d8cdd57340c511dc2a01add633716b09e5c1e9e4ba256d11d5c49240#npm:9.1.1", {
-          "packageLocation": "./.yarn/$$virtual/ts-node-virtual-41cbd79aff/0/cache/ts-node-npm-9.1.1-4ad31da228-a90db4a342.zip/node_modules/ts-node/",
+        ["virtual:bfd1e0b30ff890d6ef57af1978671ec58e6a6128a0988ed7ed91d82e816af39142528ea9e88e512c1af448b4eca6274b09c511199cdc4053d87cdf5f374a5d02#npm:9.1.1", {
+          "packageLocation": "./.yarn/$$virtual/ts-node-virtual-482cca5391/0/cache/ts-node-npm-9.1.1-4ad31da228-a90db4a342.zip/node_modules/ts-node/",
           "packageDependencies": [
-            ["ts-node", "virtual:7bcc06f43f763da2512aec6debf0d9b76c4537ceb618a784371cb268a0df4e70103bf583d8cdd57340c511dc2a01add633716b09e5c1e9e4ba256d11d5c49240#npm:9.1.1"],
+            ["ts-node", "virtual:bfd1e0b30ff890d6ef57af1978671ec58e6a6128a0988ed7ed91d82e816af39142528ea9e88e512c1af448b4eca6274b09c511199cdc4053d87cdf5f374a5d02#npm:9.1.1"],
             ["@types/typescript", null],
             ["arg", "npm:4.1.3"],
             ["create-require", "npm:1.1.1"],

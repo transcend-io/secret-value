@@ -57,6 +57,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@transcend-io/secret-value@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@transcend-io/secret-value@workspace:."
+  dependencies:
+    "@types/chai": ^4.2.14
+    "@types/mocha": ^8.2.0
+    "@yarnpkg/pnpify": ^2.4.0
+    chai: ^4.3.0
+    mocha: ^8.2.1
+    ts-node: ^9.1.1
+    tsconfig-paths: ^3.9.0
+    typescript: ^4.1.3
+  languageName: unknown
+  linkType: soft
+
 "@types/cacheable-request@npm:^6.0.1":
   version: 6.0.1
   resolution: "@types/cacheable-request@npm:6.0.1"
@@ -2270,21 +2285,6 @@ fsevents@~2.1.2:
   checksum: 549ba83f5b314b59898efe3422120ce1ca7987a6eae5925a5fa5db930dc414d4a9dde0a5594f89638cd6ea60b6840ea961872908933ac2428d1726489db46fa5
   languageName: node
   linkType: hard
-
-"secret-value@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "secret-value@workspace:."
-  dependencies:
-    "@types/chai": ^4.2.14
-    "@types/mocha": ^8.2.0
-    "@yarnpkg/pnpify": ^2.4.0
-    chai: ^4.3.0
-    mocha: ^8.2.1
-    ts-node: ^9.1.1
-    tsconfig-paths: ^3.9.0
-    typescript: ^4.1.3
-  languageName: unknown
-  linkType: soft
 
 "semver@npm:^7.1.2, semver@npm:^7.3.2":
   version: 7.3.4
