@@ -71,7 +71,7 @@ With npm:
 Wrapping a secret:
 
 ```typescript
-import { Secret } from 'secret-value';
+import { Secret } from '@transcend-io/secret-value';
 
 const secret = new Secret('some secret value')
 ```
@@ -91,7 +91,7 @@ const secretLength = secret.map((rawValue) => rawValue.length)
 Wrapping multiple values of an existing object:
 
 ```typescript
-import { wrapSecrets } from 'secret-value'
+import { wrapSecrets } from '@transcend-io/secret-value'
 
 const rawObject = { foo: 'bar', bazz: 'buzz', bippity: 'boppity' }
 const secretified = wrapSecrets(rawObject, ['bazz', 'bippity'])
