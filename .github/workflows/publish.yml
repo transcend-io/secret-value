@@ -17,7 +17,6 @@ jobs:
 
   run-tests:
     runs-on: ubuntu-latest
-    needs: run-build
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -28,16 +27,14 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - uses: actions/download-artifact@main
-        with:
-          name: build artifacts
-          path: build/
       - name: npm install, and test
         run: yarn test
 
   build-and-push-image:
     runs-on: ubuntu-latest
-    needs: run-tests
+    needs:
+      - run-tests
+      - run-build
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -56,4 +53,5 @@ jobs:
         yarn config set npmAlwaysAuth true
         yarn config set npmRegistryServer https://npm.pkg.github.com
         yarn config set npmAuthToken ${{ secrets.GITHUB_TOKEN }}
+    - run: yarn npm whoami --scope transcend-io --publish
     - run: yarn npm publish
