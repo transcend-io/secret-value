@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "outDir": "build",
+
+    "target": "es2019",
+    "module": "commonjs",
+    "lib": ["esnext", "es2020", "es2019", "dom"],
+
+    "declaration": true,
+    "composite": true,
+    "declarationMap": true,
+    "sourceMap": true,
+
+    "strict": true,
+    "noImplicitAny": true, 
+    "skipLibCheck": true,
+    "incremental": true,
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "types": ["node", "mocha"],
+    "typeRoots": ["@types", "node_modules/@types"],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+  }
+}

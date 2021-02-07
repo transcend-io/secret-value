@@ -1,0 +1,30 @@
+{
+  "author": "Transcend Inc.",
+  "name": "secret-value",
+  "description": "Type-safe wrapper for secret values",
+  "version": "1.0.4",
+  "homepage": "https://github.com/transcend-io/secret-value",
+  "repository": "github:transcend-io/secret-value",
+  "license": "MIT",
+  "main": "build/src/index",
+  "files": [
+    "build/**/*",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "yarn pnpify tsc --build",
+    "clean": "yarn pnpify tsc --build --clean",
+    "prepublish": "yarn build",
+    "test": "yarn pnpify mocha \"./src/tests/*.test.ts\""
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.14",
+    "@types/mocha": "^8.2.0",
+    "@yarnpkg/pnpify": "^2.4.0",
+    "chai": "^4.3.0",
+    "mocha": "^8.2.1",
+    "ts-node": "^9.1.1",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.1.3"
+  }
+}

@@ -1,0 +1,56 @@
+name: Create and publish a package
+on:
+  push:
+  # DO NOT SUBMIT: Only publish on `main` branch
+
+jobs:
+  run-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the typescript code
+        run: yarn build
+      - uses: actions/upload-artifact@main
+        with:
+          name: build artifacts
+          path: build/
+
+  run-tests:
+    runs-on: ubuntu-latest
+    needs: run-build
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [12.x, 14.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - uses: actions/download-artifact@main
+        with:
+          name: build artifacts
+          path: build/
+      - name: npm install, and test
+        run: yarn test
+
+  build-and-push-image:
+    runs-on: ubuntu-latest
+    needs: run-tests
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
+    - run: yarn npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
+        registry-url: 'https://npm.pkg.github.com'
+    - run: yarn npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
