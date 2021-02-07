@@ -20,7 +20,7 @@ Well you could add a big 'ole comment saying `This class has sensitive informati
 Instead, you could wrap the SSN in a `Secret<T>` type that explicitly states that its value should never see the light:
 
 ```typescript
-import { Secret } from "secret-value";
+import { Secret } from "@transcend-io/secret-value";
 
 class SurveyResults {
   constructor(
@@ -59,11 +59,11 @@ doSomethingWith(results.ssn.release())
 
 With yarn:
 
-`yarn add secret-value`
+`yarn add @transcend-io/secret-value`
 
 With npm:
 
-`npm install secret-value`
+`npm install @transcend-io/secret-value`
 
 
 ## API
