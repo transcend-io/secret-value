@@ -1,7 +1,7 @@
 // local
 import type { Identity, StringKeys } from './types';
 
-const REDACTED: string = '[redacted]';
+const REDACTED = '[redacted]';
 
 /**
  * A secret that must be explicitly released. It is made to be annoying, so that
