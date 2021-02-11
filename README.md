@@ -1,4 +1,6 @@
 # Why does this libary exist
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftranscend-io%2Fsecret-value.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftranscend-io%2Fsecret-value?ref=badge_shield)
+
 
 This module contains a type-safe secret wrapper for Typescript Project with the aim to greatly reduce the possibility of logging sensitive data, while also explicitly marking which values in Typescript ought to be protected.
 
@@ -97,3 +99,7 @@ const rawObject = { foo: 'bar', bazz: 'buzz', bippity: 'boppity' }
 const secretified = wrapSecrets(rawObject, ['bazz', 'bippity'])
 console.log(secretified) // prints { foo: 'bar', bazz: [redacted], bippity: [redacted] }
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftranscend-io%2Fsecret-value.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftranscend-io%2Fsecret-value?ref=badge_large)
