@@ -1,6 +1,8 @@
 // local
 import type { Identity, StringKeys } from './types';
 
+const REDACTED: string = '[redacted]';
+
 /**
  * A secret that must be explicitly released. It is made to be annoying, so that
  * users must really make an effort to release the stored value.
@@ -28,7 +30,7 @@ export class Secret<T> {
    * @returns a redacted message
    */
   public toJSON(): string {
-    return '[redacted]';
+    return REDACTED;
   }
 
   /**
@@ -37,7 +39,7 @@ export class Secret<T> {
    * @returns a redacted message
    */
   public valueOf(): string {
-    return '[redacted]';
+    return REDACTED;
   }
 
   /**
@@ -48,7 +50,7 @@ export class Secret<T> {
    * @returns a redacted message
    */
   [Symbol.for('nodejs.util.inspect.custom')]() {
-    return '[redacted]';
+    return REDACTED;
   }
 
   /**
@@ -57,7 +59,7 @@ export class Secret<T> {
    * @returns a redacted message
    */
   public toLocaleString(): string {
-    return '[redacted]';
+    return REDACTED;
   }
 
   /**
@@ -66,7 +68,7 @@ export class Secret<T> {
    * @returns a redacted message
    */
   public toString(): string {
-    return '[redacted]';
+    return REDACTED;
   }
   /* eslint-enable class-methods-use-this */
 
