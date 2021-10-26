@@ -1,10 +1,9 @@
 // external
 import { expect } from 'chai';
-
 import { inspect } from 'util';
 
 // global
-import { Secret } from '..';
+import { Secret } from '../Secret';
 
 describe('Secret', () => {
   it('can wrap a string value', () => {

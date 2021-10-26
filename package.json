@@ -23,6 +23,9 @@
     "prepublish": "yarn build",
     "test": "yarn pnpify mocha \"./src/tests/*.test.ts\""
   },
+  "dependencies": {
+    "@transcend-io/type-utils": "^1.0.4"
+  },
   "devDependencies": {
     "@types/chai": "^4.2.14",
     "@types/mocha": "^8.2.0",
@@ -41,9 +44,7 @@
     "mocha": "^8.2.1",
     "prettier": "^2.4.1",
     "ts-node": "^10.4.0",
-    "typescript": "^4.4.4"
-  },
-  "dependencies": {
-    "@transcend-io/type-utils": "^1.0.4"
+    "typescript": "^4.4.4",
+    "util": "^0.12.4"
   }
 }
