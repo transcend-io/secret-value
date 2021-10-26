@@ -1,5 +1,5 @@
 // local
-import type { Identity, StringKeys } from './types';
+import type { Identity, StringKeys } from '@transcend-io/type-utils';
 
 const REDACTED = '[redacted]';
 
@@ -24,7 +24,7 @@ export class Secret<T> {
   /* eslint-disable class-methods-use-this */
   /**
    * Ensure secrets are not coerced to their secret values.
-   * 
+   *
    * toJSON is called in cases like JSON.stringify(obj)
    *
    * @returns a redacted message
@@ -44,12 +44,12 @@ export class Secret<T> {
 
   /**
    * Ensure secrets are not coerced to their secret values.
-   * 
+   *
    * This is the method used by `console.log` on objects
    *
    * @returns a redacted message
    */
-  [Symbol.for('nodejs.util.inspect.custom')]() {
+  [Symbol.for('nodejs.util.inspect.custom')](): string {
     return REDACTED;
   }
 
@@ -97,7 +97,7 @@ export class Secret<T> {
  */
 export type Secretify<
   T extends object,
-  TSecretKey extends StringKeys<T>
+  TSecretKey extends StringKeys<T>,
 > = Identity<
   {
     [k in keyof T]: k extends TSecretKey ? Secret<T[k]> : T[k];

@@ -1,4 +1,2 @@
-import { Secret } from './Secret';
-
-export * from './Secret'
-export * from './wrapSecrets'
+export * from './Secret';
+export * from './wrapSecrets';

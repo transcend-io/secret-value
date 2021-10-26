@@ -1,10 +1,9 @@
 // external
 import { expect } from 'chai';
-
 import { inspect } from 'util';
 
 // global
-import { Secret } from '..';
+import { Secret } from '../Secret';
 
 describe('Secret', () => {
   it('can wrap a string value', () => {
@@ -34,17 +33,17 @@ describe('Secret', () => {
   it('redacts values in localized format', () => {
     const secret = new Secret('ahhhhhh');
     expect(secret.toLocaleString()).to.equal('[redacted]');
-  })
+  });
 
   it('redacts values called with valueOf', () => {
     const secret = new Secret('ahhhhhh');
     expect(secret.valueOf()).to.equal('[redacted]');
-  })
+  });
 
   it('redacts values in console.log format', () => {
     const secret = new Secret('ahhhhhh');
     expect(inspect(secret)).to.equal('[redacted]');
-  })
+  });
 
   describe('map', () => {
     it('can create a new secret value', () => {
