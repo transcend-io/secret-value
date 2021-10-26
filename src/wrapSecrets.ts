@@ -1,6 +1,5 @@
 // local
-import { apply } from './apply';
-import type { StringKeys } from './types';
+import { StringKeys, apply } from '@transcend-io/type-utils';
 import { Secretify, Secret } from './Secret';
 
 /**

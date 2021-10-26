@@ -1,14 +1,15 @@
-const { join } = require('path');
-
 module.exports = {
-  require: ['ts-node/register/transpile-only', 'tsconfig-paths/register'],
+  require: ['ts-node/register/transpile-only'],
   ignore: [
+    // Never look for test files in these folders
     '**/build/**/*',
     '.yarn/**/*',
+    '**/node_modules/**/*',
   ],
   extension: ['ts'],
   reporter: 'spec',
-  timeout: process.env.MOCHA_TIMEOUT || 75000,
-  slow: process.env.MOCHA_SLOW || 30000,
+  reporterOptions: {
+    configFile: 'mocha-reporter-config.json',
+  },
   colors: true,
 };

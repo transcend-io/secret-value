@@ -20,13 +20,13 @@ Well you could add a big 'ole comment saying `This class has sensitive informati
 Instead, you could wrap the SSN in a `Secret<T>` type that explicitly states that its value should never see the light:
 
 ```typescript
-import { Secret } from "@transcend-io/secret-value";
+import { Secret } from '@transcend-io/secret-value';
 
 class SurveyResults {
   constructor(
     public favoriteColor: string,
     public leastFavoritePokemon: string,
-    public ssn: Secret<string>
+    public ssn: Secret<string>,
   ) {}
 }
 ```
@@ -34,17 +34,17 @@ class SurveyResults {
 Now running any variation of:
 
 ```typescript
-const results = new SurveyResults("blue", "zubat", new Secret("123-45-6789"));
+const results = new SurveyResults('blue', 'zubat', new Secret('123-45-6789'));
 
 console.log(results);
 console.log(JSON.stringify(results, null, 2));
-console.log(results.valueOf())
-console.log(JSON.parse(JSON.stringify(results)))
-console.log(results.ssn)
-console.log(results.ssn.valueOf())
-console.log(results.ssn.toString())
-console.log(results.ssn.toLocaleString())
-console.log(JSON.stringify(results.ssn))
+console.log(results.valueOf());
+console.log(JSON.parse(JSON.stringify(results)));
+console.log(results.ssn);
+console.log(results.ssn.valueOf());
+console.log(results.ssn.toString());
+console.log(results.ssn.toLocaleString());
+console.log(JSON.stringify(results.ssn));
 ```
 
 will result in `[redacted]` being displayed to STDOUT instead of the actual value `123-45-6789`
@@ -52,7 +52,7 @@ will result in `[redacted]` being displayed to STDOUT instead of the actual valu
 When you do actually want to use the value of the SSN in your code, you can call `.release()` to get the wrapped value back out.
 
 ```typescript
-doSomethingWith(results.ssn.release())
+doSomethingWith(results.ssn.release());
 ```
 
 ## Installation
@@ -65,7 +65,6 @@ With npm:
 
 `npm install @transcend-io/secret-value`
 
-
 ## API
 
 Wrapping a secret:
@@ -73,27 +72,27 @@ Wrapping a secret:
 ```typescript
 import { Secret } from '@transcend-io/secret-value';
 
-const secret = new Secret('some secret value')
+const secret = new Secret('some secret value');
 ```
 
 Unwrapping a secret:
 
 ```typescript
-secret.release()
+secret.release();
 ```
 
 Updating a Secret value while keeping the result a secret:
 
 ```typescript
-const secretLength = secret.map((rawValue) => rawValue.length)
+const secretLength = secret.map((rawValue) => rawValue.length);
 ```
 
 Wrapping multiple values of an existing object:
 
 ```typescript
-import { wrapSecrets } from '@transcend-io/secret-value'
+import { wrapSecrets } from '@transcend-io/secret-value';
 
-const rawObject = { foo: 'bar', bazz: 'buzz', bippity: 'boppity' }
-const secretified = wrapSecrets(rawObject, ['bazz', 'bippity'])
-console.log(secretified) // prints { foo: 'bar', bazz: [redacted], bippity: [redacted] }
+const rawObject = { foo: 'bar', bazz: 'buzz', bippity: 'boppity' };
+const secretified = wrapSecrets(rawObject, ['bazz', 'bippity']);
+console.log(secretified); // prints { foo: 'bar', bazz: [redacted], bippity: [redacted] }
 ```
