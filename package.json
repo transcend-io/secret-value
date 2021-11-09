@@ -2,7 +2,7 @@
   "author": "Transcend Inc.",
   "name": "@transcend-io/secret-value",
   "description": "Type-safe wrapper for secret values",
-  "version": "1.0.11",
+  "version": "1.1.0",
   "homepage": "https://github.com/transcend-io/secret-value",
   "repository": {
     "type": "git",
@@ -24,7 +24,9 @@
     "test": "yarn pnpify mocha \"./src/tests/*.test.ts\""
   },
   "dependencies": {
-    "@transcend-io/type-utils": "^1.0.4"
+    "@transcend-io/type-utils": "^1.0.4",
+    "fp-ts": "^2.11.5",
+    "io-ts": "^2.2.16"
   },
   "devDependencies": {
     "@types/chai": "^4.2.14",
