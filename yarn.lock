@@ -284,6 +284,8 @@ __metadata:
     eslint-plugin-eslint-comments: ^3.2.0
     eslint-plugin-import: 2.25.2
     eslint-plugin-jsdoc: ^36.1.1
+    fp-ts: ^2.11.5
+    io-ts: ^2.2.16
     mocha: ^8.2.1
     prettier: ^2.4.1
     ts-node: ^10.4.0
