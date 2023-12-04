@@ -23,14 +23,13 @@
     /* Module Resolution Options */
     "moduleResolution": "node",
     "baseUrl": ".",
-    "typeRoots": ["@types", "node_modules/@types"],
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "build",
     "tsBuildInfoFile": "./build/tsbuildinfo",
     "rootDir": "src",
-    "types": ["mocha"]
+    "types": ["mocha"],
   },
   "include": ["src"],
   "exclude": ["node_modules", "build"],
