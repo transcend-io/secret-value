@@ -44,7 +44,7 @@ export function secretValue<T extends t.Any>(
       typeof x === 'object' &&
       !!x &&
       x.constructor.name === 'Secret' &&
-      !!decodeCodec(underlyingType, (x as Secret<t.TypeOf<T>>).release()),
+      !!decodeCodec(underlyingType as any, (x as Secret<t.TypeOf<T>>).release()),
     (u, c) =>
       pipe(
         t.object.validate(u, c),
