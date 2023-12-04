@@ -14,7 +14,6 @@ export class Secret<T> {
 
   /**
    * Constructor
-   *
    * @param value - The secret value
    */
   constructor(value: T) {
@@ -26,7 +25,6 @@ export class Secret<T> {
    * Ensure secrets are not coerced to their secret values.
    *
    * toJSON is called in cases like JSON.stringify(obj)
-   *
    * @returns a redacted message
    */
   public toJSON(): string {
@@ -35,7 +33,6 @@ export class Secret<T> {
 
   /**
    * Ensure secrets are not coerced to their secret values.
-   *
    * @returns a redacted message
    */
   public valueOf(): string {
@@ -46,7 +43,6 @@ export class Secret<T> {
    * Ensure secrets are not coerced to their secret values.
    *
    * This is the method used by `console.log` on objects
-   *
    * @returns a redacted message
    */
   [Symbol.for('nodejs.util.inspect.custom')](): string {
@@ -55,7 +51,6 @@ export class Secret<T> {
 
   /**
    * Ensure secrets are not coerced to their secret values.
-   *
    * @returns a redacted message
    */
   public toLocaleString(): string {
@@ -64,7 +59,6 @@ export class Secret<T> {
 
   /**
    * Ensure secrets are not coerced to their secret values.
-   *
    * @returns a redacted message
    */
   public toString(): string {
@@ -74,7 +68,6 @@ export class Secret<T> {
 
   /**
    * Releases the secret for usage
-   *
    * @returns the secret value
    */
   public release(): T {
@@ -83,7 +76,6 @@ export class Secret<T> {
 
   /**
    * Apply a function to the secret value, and returns a new Secret with that value.
-   *
    * @param transformFunc - Function to apply to the current value
    * @returns the new secret for chaining other commands
    */

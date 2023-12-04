@@ -12,13 +12,13 @@ import { decodeCodec } from '@transcend-io/type-utils';
  *
  * ```ts
  * public toContext(): { user: UserLogContext; } {
- *  return {
- *     user: {
- *       id: this.id,
- *       name: new Secret(this.name),
- *       email: new Secret(this.email),
- *     },
- *   };
+ * return {
+ * user: {
+ * id: this.id,
+ * name: new Secret(this.name),
+ * email: new Secret(this.email),
+ * },
+ * };
  * }
  * ```
  *
@@ -26,12 +26,11 @@ import { decodeCodec } from '@transcend-io/type-utils';
  *
  * ```
  * export const UserLogContext = t.type({
- *  id: dbModelId('user'),
- *  email: secretValue(t.string),
- *  name: secretValue(t.string),
+ * id: dbModelId('user'),
+ * email: secretValue(t.string),
+ * name: secretValue(t.string),
  * });
- *  ```
- *
+ * ```
  * @param underlyingType - The underlying type of secret
  * @returns The secret instance
  */
@@ -44,7 +43,11 @@ export function secretValue<T extends t.Any>(
       typeof x === 'object' &&
       !!x &&
       x.constructor.name === 'Secret' &&
-      !!decodeCodec(underlyingType as any, (x as Secret<t.TypeOf<T>>).release()),
+      !!decodeCodec(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        underlyingType as any,
+        (x as Secret<t.TypeOf<T>>).release(),
+      ),
     (u, c) =>
       pipe(
         t.object.validate(u, c),
