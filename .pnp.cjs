@@ -1031,7 +1031,7 @@ const RAW_RUNTIME_STATE =
           ["fast-glob", "npm:3.3.2"],\
           ["got", "npm:11.8.6"],\
           ["lodash", "npm:4.17.21"],\
-          ["micromatch", "npm:4.0.5"],\
+          ["micromatch", "npm:4.0.8"],\
           ["p-limit", "npm:2.3.0"],\
           ["semver", "npm:7.5.4"],\
           ["strip-ansi", "npm:6.0.1"],\
@@ -1154,7 +1154,7 @@ const RAW_RUNTIME_STATE =
           ["clipanion", "virtual:3927f33f2ff9948e582ae9e8d30cfb49feeaf368768e392b4f7a246df7df71d786084a0dfaec6b657deb3805ec8ae2f049eca7e85d34cc96fe0c51239ba5e24c#npm:4.0.0-rc.2"],\
           ["cross-spawn", "npm:7.0.3"],\
           ["fast-glob", "npm:3.3.2"],\
-          ["micromatch", "npm:4.0.5"],\
+          ["micromatch", "npm:4.0.8"],\
           ["tslib", "npm:2.6.2"]\
         ],\
         "linkType": "HARD"\
@@ -2727,7 +2727,7 @@ const RAW_RUNTIME_STATE =
           ["@nodelib/fs.walk", "npm:1.2.8"],\
           ["glob-parent", "npm:5.1.2"],\
           ["merge2", "npm:1.4.1"],\
-          ["micromatch", "npm:4.0.5"]\
+          ["micromatch", "npm:4.0.8"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2798,7 +2798,7 @@ const RAW_RUNTIME_STATE =
           ["findup-sync", "npm:5.0.0"],\
           ["detect-file", "npm:1.0.0"],\
           ["is-glob", "npm:4.0.3"],\
-          ["micromatch", "npm:4.0.5"],\
+          ["micromatch", "npm:4.0.8"],\
           ["resolve-dir", "npm:1.0.1"]\
         ],\
         "linkType": "HARD"\
@@ -3982,10 +3982,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["micromatch", [\
-      ["npm:4.0.5", {\
-        "packageLocation": "./.yarn/cache/micromatch-npm-4.0.5-cfab5d7669-a749888789.zip/node_modules/micromatch/",\
+      ["npm:4.0.8", {\
+        "packageLocation": "./.yarn/cache/micromatch-npm-4.0.8-c9570e4aca-6bf2a01672.zip/node_modules/micromatch/",\
         "packageDependencies": [\
-          ["micromatch", "npm:4.0.5"],\
+          ["micromatch", "npm:4.0.8"],\
           ["braces", "npm:3.0.3"],\
           ["picomatch", "npm:2.3.1"]\
         ],\
