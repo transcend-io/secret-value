@@ -1,4 +1,4 @@
-# Why does this libary exist
+# Why does this library exist
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ftranscend-io%2Fsecret-value.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ftranscend-io%2Fsecret-value?ref=badge_shield)
 
