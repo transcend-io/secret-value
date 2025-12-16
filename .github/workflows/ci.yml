@@ -40,7 +40,7 @@ jobs:
         with:
           node-version: 18.x
       - run: npm install -g "yarn@1.22.5"
-      - uses: pre-commit/action@v2.0.2
+      - uses: pre-commit/action@v3.0.1
         with:
           extra_args: --source ${{ github.event.pull_request.base.sha || 'HEAD~1' }} --origin ${{ github.event.pull_request.head.sha || 'HEAD' }}
 
