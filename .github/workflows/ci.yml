@@ -1,6 +1,11 @@
 name: Build, test, and optionally publish
 on: push
 
+permissions:
+  id-token: write
+  contents: read
+  packages: write
+
 jobs:
   build-and-upload-artifacts:
     runs-on: ubuntu-latest
@@ -18,11 +23,11 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node-version: [18.x, 20.x]
+        node-version: [18.x, 20.x, 22.x, 24.x]
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install -g "yarn@1.22.5"
@@ -35,10 +40,10 @@ jobs:
         with:
           fetch-depth: 100 # need the history to do a changed files check below (source, origin)
       - uses: actions/setup-python@v2
-      - name: Use Node.js 18.x
-        uses: actions/setup-node@v1
+      - name: Use Node.js 22.x
+        uses: actions/setup-node@v6
         with:
-          node-version: 18.x
+          node-version: 22.x
       - run: npm install -g "yarn@1.22.5"
       - uses: pre-commit/action@v3.0.1
         with:
@@ -48,10 +53,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 18.x
-        uses: actions/setup-node@v1
+      - name: Use Node.js 22.x
+        uses: actions/setup-node@v6
         with:
-          node-version: 18.x
+          node-version: 22.x
       - run: npm install -g "yarn@1.22.5"
       - run: yarn depcheck
 
@@ -65,15 +70,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v6
         with:
-          node-version: '18.x'
-      - name: Configure NPM authentication
-        run: |
-          yarn config set npmAlwaysAuth true
-          yarn config set npmAuthToken ${{ secrets.NPM_TOKEN }}
+          node-version: '22.x'
+          registry-url: 'https://registry.npmjs.org'
       - name: Publish to yarn/npm
         run: yarn npm publish
+        env:
+          NODE_AUTH_TOKEN: ''
 
   build-to-github-packages:
     if: github.ref == 'refs/heads/main'
@@ -85,9 +89,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v6
         with:
-          node-version: '18.x'
+          node-version: '22.x'
       - name: Configure Github Packages authentication
         run: |
           yarn config set npmAlwaysAuth true
