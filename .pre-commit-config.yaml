@@ -15,7 +15,7 @@ repos:
       - id: check-symlinks
       - id: check-case-conflict
       - id: check-executables-have-shebangs
-        exclued: '.cache'
+        exclude: '.cache'
       - id: check-added-large-files
         exclude: (yarn.lock|.yarn/|.pnp.cjs)
       - id: check-json
