@@ -82,7 +82,7 @@ jobs:
       - name: Publish to yarn/npm
         run: yarn npm publish
         env:
-          NODE_AUTH_TOKEN: ""
+          NODE_AUTH_TOKEN: ''
 
   build-to-github-packages:
     if: github.ref == 'refs/heads/main'
