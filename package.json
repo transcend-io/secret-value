@@ -15,13 +15,13 @@
     "package.json"
   ],
   "scripts": {
-    "update:sdks": "yarn set version from sources && yarn sdks base",
+    "update:sdks": "yarn set version from sources && yarn dlx @yarnpkg/sdks base",
     "update:deps": "yarn upgrade-interactive && yarn update:sdks",
-    "build": "yarn pnpify tsc --build",
-    "clean": "yarn pnpify tsc --build --clean",
-    "lint": "yarn pnpify eslint src --ext .ts",
+    "build": "yarn tsc --build",
+    "clean": "yarn tsc --build --clean",
+    "lint": "yarn eslint src --ext .ts",
     "prepublish": "yarn build",
-    "test": "yarn pnpify mocha \"./src/tests/*.test.ts\""
+    "test": "yarn mocha \"./src/tests/*.test.ts\""
   },
   "dependencies": {
     "@transcend-io/type-utils": "^1.1.2",
@@ -33,8 +33,6 @@
     "@types/mocha": "^10.0.6",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.13.2",
-    "@yarnpkg/pnpify": "^4.1.3",
-    "@yarnpkg/sdks": "^3.2.0",
     "chai": "^4.3.10",
     "depcheck": "^1.4.7",
     "eslint": "^8.55.0",
@@ -47,10 +45,6 @@
     "prettier": "^3.1.0",
     "ts-node": "^10.9.1",
     "typescript": "~5.3.2"
-  },
-  "resolutions": {
-    "lodash": "^4.17.23",
-    "tar": "^7.5.8"
   },
   "packageManager": "yarn@4.12.0"
 }
