@@ -48,5 +48,9 @@
     "ts-node": "^10.9.1",
     "typescript": "~5.3.2"
   },
+  "resolutions": {
+    "tar": "^7.5.9",
+    "lodash": "^4.17.23"
+  },
   "packageManager": "yarn@4.12.0"
 }
