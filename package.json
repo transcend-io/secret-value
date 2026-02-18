@@ -28,6 +28,9 @@
     "fp-ts": "^2.16.1",
     "io-ts": "^2.2.21"
   },
+  "resolutions": {
+    "tar": "^7.5.7"
+  },
   "devDependencies": {
     "@types/chai": "^4.3.11",
     "@types/mocha": "^10.0.6",
