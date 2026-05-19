@@ -1,1 +1,1 @@
-ignores: ["@yarnpkg/sdks", "depcheck", "prettier", "@yarnpkg/pnpify", "mocha", "ts-node"]
+ignores: ["@yarnpkg/sdks", "depcheck", "prettier", "@yarnpkg/pnpify", "mocha"]

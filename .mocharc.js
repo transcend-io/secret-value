@@ -1,11 +1,10 @@
 module.exports = {
   ignore: [
     // Never look for test files in these folders
-    '**/build/**/*',
     '.yarn/**/*',
     '**/node_modules/**/*',
   ],
-  extension: ['ts'],
+  extension: ['ts', 'js'],
   reporter: 'spec',
   reporterOptions: {
     configFile: 'mocha-reporter-config.json',
