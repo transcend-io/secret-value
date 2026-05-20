@@ -245,7 +245,10 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': ['error'],
 
     /** We want to eventually turn this to an error */
-    '@typescript-eslint/ban-types': ['error'],
+    '@typescript-eslint/no-restricted-types': ['error'],
+    '@typescript-eslint/no-empty-object-type': ['error'],
+    '@typescript-eslint/no-unsafe-function-type': ['error'],
+    '@typescript-eslint/no-wrapper-object-types': ['error'],
     '@typescript-eslint/no-explicit-any': ['error'],
   },
   settings: {

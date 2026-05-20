@@ -21,7 +21,7 @@
     "clean": "tsc --build --clean",
     "lint": "eslint src --ext .ts",
     "prepublish": "yarn build",
-    "test": "mocha \"./src/tests/*.test.ts\""
+    "test": "yarn build && yarn node $(yarn bin _mocha) \"build/tests/*.test.js\""
   },
   "dependencies": {
     "@transcend-io/type-utils": "^1.1.2",
@@ -31,20 +31,22 @@
   "devDependencies": {
     "@types/chai": "^4.3.11",
     "@types/mocha": "^10.0.6",
-    "@typescript-eslint/eslint-plugin": "^6.13.2",
-    "@typescript-eslint/parser": "^6.13.2",
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
     "chai": "^4.3.10",
     "depcheck": "^1.4.7",
-    "eslint": "^8.55.0",
+    "eslint": "^8.57.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "2.29.0",
     "eslint-plugin-jsdoc": "^46.9.0",
-    "mocha": "^11.0.0",
+    "mocha": "^11.7.0",
     "prettier": "^3.1.0",
-    "ts-node": "^10.9.1",
     "typescript": "~5.3.2"
   },
-  "packageManager": "yarn@4.12.0"
+  "packageManager": "yarn@4.14.1",
+  "resolutions": {
+    "serialize-javascript@npm:^6.0.2": "7.0.5"
+  }
 }
