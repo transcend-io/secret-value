@@ -1,1 +1,0 @@
-ignores: ["@yarnpkg/sdks", "depcheck", "prettier", "@yarnpkg/pnpify", "mocha"]
